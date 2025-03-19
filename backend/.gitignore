@@ -1,0 +1,9 @@
+node_modules/
+keys/
+.env
+.DS_STORE
+/postgres
+dist/
+coverage/
+.env.test
+public/
