@@ -7,6 +7,7 @@ export class ReservationEntity {
         public clientName: string,
         public clientAddress: string,
         public clientPhoneNumber: string,
+        public product: string,
         public paidAmount: number ,
         public pendingAmount: number,
     ){}
@@ -17,6 +18,7 @@ export class ReservationEntity {
             clientName,
             clientAddress,
             clientPhoneNumber,
+            product,
             paidAmount,
             pendingAmount,
         } = object;
@@ -25,11 +27,12 @@ export class ReservationEntity {
         if(!clientName) throw CustomError.badRequest('Name of the client is required');
         if(!clientAddress) throw CustomError.badRequest('Address of the client is required');
         if(!clientPhoneNumber) throw CustomError.badRequest('Phone number is required');
+        if(!product) throw CustomError.badRequest('Product is required');
         if(!paidAmount) throw CustomError.badRequest('Paid amount is required');
         if(!pendingAmount) throw CustomError.badRequest('Pending amount is required');
         
 
-        return new ReservationEntity(id, clientName, clientAddress, clientPhoneNumber, paidAmount, pendingAmount);
+        return new ReservationEntity(id, clientName, clientAddress, clientPhoneNumber, product, paidAmount, pendingAmount);
 
     }
 }
