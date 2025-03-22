@@ -5,7 +5,7 @@ export class InvoiceEntity {
     constructor(
         public id: string,
         public invoiceNumber: number,
-        public date: string,
+        public date: Date,
         public store: string,
         public clientName: string,
         public clientAddress: string,
