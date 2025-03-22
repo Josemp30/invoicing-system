@@ -1,11 +1,12 @@
 import { CustomError } from "../errors/custom.error";
+import { InvoiceEntity } from "./invoice.entity";
 
 export class CashCountEntity {
 
     constructor(
         public id: string,
         public date: string,
-        public invoices: number[],
+        public invoices: InvoiceEntity[],
         public totalAmount: number,
     ){}
 
