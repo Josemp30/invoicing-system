@@ -9,8 +9,6 @@ export abstract class CashCountRepository {
 
     abstract findById(id: string) : Promise<CashCountEntity>;
 
-    abstract updateById() : Promise<CashCountEntity>;
-
     abstract deleteById(id: string) : Promise<CashCountEntity>;
 
 }
