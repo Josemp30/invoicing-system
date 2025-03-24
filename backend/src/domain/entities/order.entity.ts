@@ -7,6 +7,7 @@ export class OrderEntity {
         public clientName: string,
         public clientPhoneNumber: string,
         public product: string,
+        public received: boolean,
     ){}
 
     static fromObject( object: { [key: string]: any }) : OrderEntity {
@@ -15,6 +16,7 @@ export class OrderEntity {
             clientName,
             clientPhoneNumber,
             product,
+            received = false,
         } = object;
 
         if(!id) throw CustomError.badRequest('ID is required');
@@ -22,7 +24,7 @@ export class OrderEntity {
         if(!clientPhoneNumber) throw CustomError.badRequest('Phone number is required');
         if(!product) throw CustomError.badRequest('Product is required');
 
-        return new OrderEntity(id, clientName, clientPhoneNumber, product);
+        return new OrderEntity(id, clientName, clientPhoneNumber, product, received);
 
     }
 }
