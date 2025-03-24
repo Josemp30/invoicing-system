@@ -7,9 +7,7 @@ export abstract class InvoiceDatasource {
     abstract getAll() : Promise<InvoiceEntity[]>;
 
     abstract findById(id: string) : Promise<InvoiceEntity>;
-
-    abstract updateById() : Promise<InvoiceEntity>;
-
+    
     abstract deleteById(id: string) : Promise<InvoiceEntity>;
 
 }
