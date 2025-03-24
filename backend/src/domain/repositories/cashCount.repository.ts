@@ -1,8 +1,9 @@
+import { CreateCashCountDto } from "../dtos/cashcounts";
 import { CashCountEntity } from "../entities/cashCount.entity";
 
 export abstract class CashCountRepository {
 
-    abstract create() : Promise<CashCountEntity>;
+    abstract create(dto: CreateCashCountDto) : Promise<CashCountEntity>;
 
     abstract getAll() : Promise<CashCountEntity[]>;
 
