@@ -1,8 +1,9 @@
+import { CreateOrderDto } from "../dtos/orders";
 import { OrderEntity } from "../entities/order.entity";
 
 export abstract class OrderRepository {
 
-    abstract create() : Promise<OrderEntity>;
+    abstract create(dto: CreateOrderDto) : Promise<OrderEntity>;
 
     abstract getAll() : Promise<OrderEntity[]>;
 
