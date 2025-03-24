@@ -7,9 +7,7 @@ export abstract class CashCountDatasource {
     abstract getAll() : Promise<CashCountEntity[]>;
 
     abstract findById(id: string) : Promise<CashCountEntity>;
-
-    abstract updateById() : Promise<CashCountEntity>;
-
+    
     abstract deleteById(id: string) : Promise<CashCountEntity>;
 
 }
