@@ -4,10 +4,11 @@ export class InventoryEntity {
 
     constructor(
         public id: string,
+        public store: string,
         public product: string,
         public brand: string,
         public model: string,
-        public quantity: string,
+        public quantity: number,
         public dimensions: string,
         public price: number,
         public receivedAt: Date,
@@ -18,6 +19,7 @@ export class InventoryEntity {
     static fromObject( object: { [key: string]: any }) : InventoryEntity {
         const { 
             id,
+            store,
             product,
             brand,
             model,
@@ -30,6 +32,7 @@ export class InventoryEntity {
         } = object;
 
         if(!id) throw CustomError.badRequest('ID is required');
+        if(!store) throw CustomError.badRequest('Store is required');
         if(!product) throw CustomError.badRequest('Product is required');
         if(!brand) throw CustomError.badRequest('Brand is required');
         if(!model) throw CustomError.badRequest('Model is required');
@@ -40,7 +43,7 @@ export class InventoryEntity {
         if(!origin) throw CustomError.badRequest('Origin is required');
         if(!available) throw CustomError.badRequest('Availability is required');
 
-        return new InventoryEntity(id, product, brand, model, quantity, dimensions, price, receivedAt, origin, available);
+        return new InventoryEntity(id, store, product, brand, model, quantity, dimensions, price, receivedAt, origin, available);
 
     }
 }
