@@ -1,14 +1,15 @@
-import { ProductEntity } from "../entities/product.entity";
+import { CreateProductDto, UpdateProductDto } from "../dtos/products";
+import { ProductEntity } from "../entities";
 
 export abstract class ProductRepository {
 
-    abstract create() : Promise<ProductEntity>;
+    abstract create(dto: CreateProductDto) : Promise<ProductEntity>;
 
     abstract getAll() : Promise<ProductEntity[]>;
 
     abstract findById(id: string) : Promise<ProductEntity>;
 
-    abstract updateById() : Promise<ProductEntity>;
+    abstract updateById(dto: UpdateProductDto) : Promise<ProductEntity>;
 
     abstract deleteById(id: string) : Promise<ProductEntity>;
 

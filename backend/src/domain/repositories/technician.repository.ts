@@ -1,5 +1,5 @@
 import { CreateTechnicianDto, UpdateTechnicianDto } from "../dtos/technicians";
-import { TechnicianEntity } from "../entities/technician.entity";
+import { TechnicianEntity } from "../entities";
 
 export abstract class TechnicianRepository {
 

@@ -1,5 +1,5 @@
 import { CreateCashCountDto } from "../dtos/cashcounts";
-import { CashCountEntity } from "../entities/cashCount.entity";
+import { CashCountEntity } from "../entities";
 
 export abstract class CashCountRepository {
 

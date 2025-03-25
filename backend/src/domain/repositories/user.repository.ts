@@ -1,5 +1,5 @@
 import { CreateUserDto, UpdateUserDto } from "../dtos/auth";
-import { UserEntity } from "../entities/user.entity";
+import { UserEntity } from "../entities";
 
 export abstract class UserRepository {
 

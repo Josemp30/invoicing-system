@@ -1,6 +1,5 @@
-import { CreateOrderDto } from "../dtos/orders";
-import { UpdateOrderDto } from "../dtos/orders/update-order.dto";
-import { OrderEntity } from "../entities/order.entity";
+import { CreateOrderDto, UpdateOrderDto } from "../dtos/orders";
+import { OrderEntity } from "../entities";
 
 export abstract class OrderRepository {
 

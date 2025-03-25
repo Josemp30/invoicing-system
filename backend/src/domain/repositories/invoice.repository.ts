@@ -1,5 +1,5 @@
 import { CreateInvoiceDto } from "../dtos/invoices";
-import { InvoiceEntity } from "../entities/invoice.entity";
+import { InvoiceEntity } from "../entities";
 
 export abstract class InvoiceRepository {
 

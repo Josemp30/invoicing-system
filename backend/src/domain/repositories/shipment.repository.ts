@@ -1,5 +1,5 @@
 import { CreateShipmentDto, UpdateShipmentDto } from "../dtos/shipments";
-import { ShipmentEntity } from "../entities/shipment.entity";
+import { ShipmentEntity } from "../entities";
 
 export abstract class ShipmentRepository {
 

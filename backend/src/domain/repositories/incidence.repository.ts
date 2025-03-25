@@ -1,5 +1,5 @@
 import { CreateIncidenceDto, UpdateIncidenceDto } from "../dtos/incidences";
-import { IncidenceEntity } from "../entities/incidence.entity";
+import { IncidenceEntity } from "../entities";
 
 export abstract class IncidenceRepository {
 

@@ -1,5 +1,5 @@
 import { CreateReservationDto, UpdateReservationDto } from "../dtos/reservations";
-import { ReservationEntity } from "../entities/reservation.entity";
+import { ReservationEntity } from "../entities";
 
 export abstract class ReservationRepository {
 

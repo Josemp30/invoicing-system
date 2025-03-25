@@ -1,5 +1,5 @@
 import { CreateClientDto, UpdateClientDto } from "../dtos/clients";
-import { ClientEntity } from "../entities/client.entity";
+import { ClientEntity } from "../entities";
 
 export abstract class ClientRepository {
 

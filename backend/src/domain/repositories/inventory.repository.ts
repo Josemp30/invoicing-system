@@ -1,14 +1,15 @@
-import { InventoryEntity } from "../entities/inventory.entity";
+import { AddProductDto, UpdatedInventoryDto } from "../dtos/inventories";
+import { InventoryEntity } from "../entities";
 
 export abstract class InventoryRepository {
 
-    abstract create() : Promise<InventoryEntity>;
+    abstract create(dto: AddProductDto) : Promise<InventoryEntity>;
 
     abstract getAll() : Promise<InventoryEntity[]>;
 
     abstract findById(id: string) : Promise<InventoryEntity>;
 
-    abstract updateById() : Promise<InventoryEntity>;
+    abstract updateById(dto: UpdatedInventoryDto) : Promise<InventoryEntity>;
 
     abstract deleteById(id: string) : Promise<InventoryEntity>;
 
