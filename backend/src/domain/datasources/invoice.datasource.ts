@@ -1,8 +1,9 @@
+import { CreateInvoiceDto } from "../dtos/invoices";
 import { InvoiceEntity } from "../entities/invoice.entity";
 
 export abstract class InvoiceDatasource {
 
-    abstract create() : Promise<InvoiceEntity>;
+    abstract create(dto: CreateInvoiceDto) : Promise<InvoiceEntity>;
 
     abstract getAll() : Promise<InvoiceEntity[]>;
 

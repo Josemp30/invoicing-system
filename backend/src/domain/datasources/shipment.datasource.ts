@@ -1,14 +1,15 @@
+import { CreateShipmentDto, UpdateShipmentDto } from "../dtos/shipments";
 import { ShipmentEntity } from "../entities/shipment.entity";
 
 export abstract class ShipmentDatasource {
 
-    abstract create() : Promise<ShipmentEntity>;
+    abstract create(dto: CreateShipmentDto) : Promise<ShipmentEntity>;
 
     abstract getAll() : Promise<ShipmentEntity[]>;
 
     abstract findById(id: string) : Promise<ShipmentEntity>;
 
-    abstract updateById() : Promise<ShipmentEntity>;
+    abstract updateById(dto: UpdateShipmentDto) : Promise<ShipmentEntity>;
 
     abstract deleteById(id: string) : Promise<ShipmentEntity>;
 
