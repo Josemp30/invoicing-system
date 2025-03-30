@@ -2,6 +2,7 @@
 export class UpdateShipmentDto {
 
     constructor(
+        public id: string,
         public date: Date,
         public deliveredAt: Date,
     ){}
@@ -20,9 +21,10 @@ export class UpdateShipmentDto {
 
     static update(props: {[key: string]: any}): [string?, UpdateShipmentDto?] {
 
-        const { date, deliveredAt } = props;
+        const { id, date, deliveredAt } = props;
+        //Add id validation
 
-        return [undefined, new UpdateShipmentDto(date, deliveredAt)];
+        return [undefined, new UpdateShipmentDto(id, date, deliveredAt)];
     
     }
 }

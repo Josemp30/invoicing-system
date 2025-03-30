@@ -2,6 +2,7 @@
 export class UpdateProductDto {
 
     constructor(
+        public id: string,
         public product: string,
         public brand: string,
         public model: string,
@@ -22,9 +23,10 @@ export class UpdateProductDto {
 
     static update(props: {[key: string]: any}): [string?, UpdateProductDto?] {
 
-        const { product, brand, model, dimensions } = props;
+        const { id, product, brand, model, dimensions } = props;
+        //Add id validation
 
-        return [undefined, new UpdateProductDto(product, brand, model, dimensions)];
+        return [undefined, new UpdateProductDto(id, product, brand, model, dimensions)];
 
     }
 

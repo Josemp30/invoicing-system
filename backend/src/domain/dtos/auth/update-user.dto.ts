@@ -2,6 +2,7 @@
 export class UpdateUserDto {
 
     constructor(
+        public readonly id: string,
         public readonly role: string,
         public readonly email: string,
         public readonly password: string,
@@ -21,11 +22,12 @@ export class UpdateUserDto {
 
     static update(props: {[key: string]:any}) : [string?, UpdateUserDto?] {
 
-        const { role, email, password, isActive } = props;
+        const { id, role, email, password, isActive } = props;
+        //Add id validation
 
         if(password.length < 6) return ['Password should have more than 5 characters', undefined];
 
-        return [undefined, new UpdateUserDto(role, email, password, isActive)];
+        return [undefined, new UpdateUserDto(id, role, email, password, isActive)];
 
     }
 

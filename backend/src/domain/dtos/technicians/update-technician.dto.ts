@@ -2,6 +2,7 @@
 export class UpdateTechnicianDto {
 
     constructor(
+        public id: string,
         public email: string,
         public phoneNumber: string,
     ){}
@@ -20,9 +21,10 @@ export class UpdateTechnicianDto {
 
     static update(props: {[key: string]: any}): [string?, UpdateTechnicianDto?] {
 
-        const { email, phoneNumber } = props;
+        const { id, email, phoneNumber } = props;
+        //Add id validation
 
-        return [undefined, new UpdateTechnicianDto(email, phoneNumber)];
+        return [undefined, new UpdateTechnicianDto(id, email, phoneNumber)];
     
     }
 }

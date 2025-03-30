@@ -2,6 +2,7 @@
 export class UpdateReservationDto {
 
     constructor(
+        public id: string,
         public paidAmount: number,
         public pendingAmount: number,
     ){}
@@ -20,9 +21,10 @@ export class UpdateReservationDto {
 
     static update(props: {[key: string]: any}): [string?, UpdateReservationDto?] {
 
-        const { paidAmount, pendingAmount } = props;
+        const { id, paidAmount, pendingAmount } = props;
+        //Add id validation
 
-        return [undefined, new UpdateReservationDto(paidAmount, pendingAmount)];
+        return [undefined, new UpdateReservationDto(id, paidAmount, pendingAmount)];
     
     }
 }

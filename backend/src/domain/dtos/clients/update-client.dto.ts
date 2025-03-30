@@ -2,11 +2,12 @@
 export class UpdateClientDto {
 
     constructor(
+        public id: string,
         public address: string,
         public phoneNumber: string,
     ){}
 
-    get Values() {
+    get values() {
         const returnObject: {[key: string]: any} = {}
 
         if(this.address) returnObject.address = this.address;
@@ -17,9 +18,10 @@ export class UpdateClientDto {
 
     static update(props: {[key: string]: any}): [string?, UpdateClientDto?] {
 
-        const { address, phoneNumber } = props;
+        const { id, address, phoneNumber } = props;
+        //Add id validation
 
-        return [undefined, new UpdateClientDto(address, phoneNumber)];
+        return [undefined, new UpdateClientDto(id, address, phoneNumber)];
 
     }
 

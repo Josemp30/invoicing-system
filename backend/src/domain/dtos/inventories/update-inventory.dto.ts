@@ -2,6 +2,7 @@
 export class UpdatedInventoryDto {
 
     constructor(
+        public id: string,
         public quantity: number,
         public price: number,
         public available: boolean,
@@ -20,9 +21,10 @@ export class UpdatedInventoryDto {
 
     static update(props: {[key: string]: any}): [string?, UpdatedInventoryDto?] {
 
-        const { quantity, price, available } = props;
+        const { id, quantity, price, available } = props;
+        //Add id validation
 
-        return [undefined, new UpdatedInventoryDto(quantity, price, available)];
+        return [undefined, new UpdatedInventoryDto(id, quantity, price, available)];
 
     }
 

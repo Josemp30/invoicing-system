@@ -2,6 +2,7 @@
 export class UpdateStoreDto {
 
     constructor(
+        public id: string,
         public name: string,
         public address: string,
         public phoneNumber: string,
@@ -20,9 +21,10 @@ export class UpdateStoreDto {
 
     static update(props: {[key: string]: any}): [string?, UpdateStoreDto?] {
 
-        const { name, address, phoneNumber } = props;
+        const { id, name, address, phoneNumber } = props;
+        //Add id validation
 
-        return [undefined, new UpdateStoreDto(name, address, phoneNumber)];
+        return [undefined, new UpdateStoreDto(id, name, address, phoneNumber)];
 
     }
 

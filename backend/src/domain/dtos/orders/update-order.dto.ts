@@ -2,6 +2,7 @@
 export class UpdateOrderDto {
 
     constructor(
+        public id: string,
         public received: boolean,
     ){}
     
@@ -17,9 +18,10 @@ export class UpdateOrderDto {
 
     static updateOrder(props: {[key: string]: any}): [string?, UpdateOrderDto?] {
 
-        const {received} = props;
+        const {id, received} = props;
+        //Add id validation
 
-        return [undefined, new UpdateOrderDto(received)];
+        return [undefined, new UpdateOrderDto(id, received)];
 
     }
 

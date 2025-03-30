@@ -2,6 +2,7 @@
 export class UpdateIncidenceDto {
 
     constructor(
+        public id: string,
         public product: string,
         public technician: string,
         public solvedAt: Date,
@@ -21,8 +22,9 @@ export class UpdateIncidenceDto {
 
     static update(props: {[key: string]: any}): [string?, UpdateIncidenceDto?] {
 
-        const { product, technician, solvedAt } = props
+        const { id, product, technician, solvedAt } = props
+        //Add id validation
 
-        return [undefined, new UpdateIncidenceDto(product, technician, solvedAt)];
+        return [undefined, new UpdateIncidenceDto(id, product, technician, solvedAt)];
     }
 }
