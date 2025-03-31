@@ -14,8 +14,16 @@ export class CreateShipmentDto {
 
     static create(props: {[key: string]: any}): [string?, CreateShipmentDto?] {
 
-        const { invoiceNumber, date, from, clientName, clientAddress, clientPhoneNumber, product, deliveredAt } = props;
-        // Add default date( new Date() + 1 day )
+        const { invoiceNumber,
+            date = new Date(new Date().setDate(new Date().getDate() + 1)),
+            from,
+            clientName,
+            clientAddress,
+            clientPhoneNumber,
+            product,
+            deliveredAt
+        } = props;
+
         // Add default store
 
         if(!invoiceNumber) return ['Invoice number is required', undefined];

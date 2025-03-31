@@ -1,8 +1,14 @@
 
+enum Roles {
+    admin = 'admin',
+    vendor = 'vendor',
+    fullAdmin = 'fullAdmin',
+}
+
 export class CreateUserDto {
 
     constructor(
-        public readonly role: string,
+        public readonly role: Roles,
         public readonly email: string,
         public readonly password: string,
         public readonly name: string,
