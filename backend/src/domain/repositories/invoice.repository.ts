@@ -3,7 +3,7 @@ import { InvoiceEntity } from "../entities";
 
 export abstract class InvoiceRepository {
 
-    abstract create(dto: CreateInvoiceDto) : Promise<InvoiceEntity>;
+    abstract create(dto: CreateInvoiceDto, shipment: boolean) : Promise<InvoiceEntity>;
 
     abstract getAll() : Promise<InvoiceEntity[]>;
 
