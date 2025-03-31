@@ -3,7 +3,7 @@ import { CashCountEntity } from "../entities/cashCount.entity";
 
 export abstract class CashCountDatasource {
 
-    abstract create(dto: CreateCashCountDto) : Promise<CashCountEntity>;
+    abstract create(dto: CreateCashCountDto, date: Date) : Promise<CashCountEntity>;
 
     abstract getAll() : Promise<CashCountEntity[]>;
 
