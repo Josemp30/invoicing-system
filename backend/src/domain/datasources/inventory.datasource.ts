@@ -3,7 +3,7 @@ import { InventoryEntity } from "../entities/inventory.entity";
 
 export abstract class InventoryDatasource {
 
-    abstract create(dto: AddProductDto) : Promise<InventoryEntity>;
+    abstract create(dto: AddProductDto, storeId: string) : Promise<InventoryEntity>;
 
     abstract getAll() : Promise<InventoryEntity[]>;
 
