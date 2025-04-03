@@ -4,22 +4,22 @@ export class ProductEntity {
 
     constructor(
         public id: string,
-        public product: string,
+        public name: string,
         public brand: string,
         public model: string,
-        public dimensions: string,
+        public origin: string,
     ){}
 
     static fromObject( object: { [key: string]: any}) : ProductEntity {
 
-        const { id, product, brand, model, dimensions } = object;
+        const { id, name, brand, model, origin } = object;
 
-        if(!product) throw CustomError.badRequest('Product is required');
+        if(!name) throw CustomError.badRequest('Name is required');
         if(!brand) throw CustomError.badRequest('Brand is required');
         if(!model) throw CustomError.badRequest('Model is required');
-        if(!dimensions) throw CustomError.badRequest('Dimensions are required');
+        if(!origin) throw CustomError.badRequest('Origin is required');
 
-        return new ProductEntity(id, product, brand, model, dimensions);
+        return new ProductEntity(id, name, brand, model, origin);
     }
 
 }
