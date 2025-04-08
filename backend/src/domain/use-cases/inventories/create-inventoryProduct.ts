@@ -3,7 +3,7 @@ import { InventoryEntity } from "../../entities";
 import { InventoryRepository } from "../../repositories";
 
 export interface CreateInventoryProductUseCase {
-    execute(dto: AddProductDto): Promise<InventoryEntity>;
+    execute(dto: AddProductDto, storeId: string): Promise<InventoryEntity>;
 }
 
 export class CreateInventoryProduct implements CreateInventoryProductUseCase {
@@ -12,8 +12,8 @@ export class CreateInventoryProduct implements CreateInventoryProductUseCase {
         private repository: InventoryRepository,
     ){}
 
-    execute(dto: AddProductDto): Promise<InventoryEntity> {
-        return this.repository.create(dto);
+    execute(dto: AddProductDto, storeId: string): Promise<InventoryEntity> {
+        return this.repository.create(dto, storeId);
     }
 
 }

@@ -3,7 +3,7 @@ import { InvoiceEntity } from "../../entities";
 import { InvoiceRepository } from "../../repositories";
 
 export interface CreateInvoiceUseCase {
-    execute(dto: CreateInvoiceDto): Promise<InvoiceEntity>;
+    execute(dto: CreateInvoiceDto, shipment: boolean): Promise<InvoiceEntity>;
 }
 
 export class CreateInvoice implements CreateInvoiceUseCase {
@@ -12,8 +12,8 @@ export class CreateInvoice implements CreateInvoiceUseCase {
         private repository: InvoiceRepository,
     ){}
 
-    execute(dto: CreateInvoiceDto): Promise<InvoiceEntity> {
-        return this.repository.create(dto);
+    execute(dto: CreateInvoiceDto, shipment: boolean): Promise<InvoiceEntity> {
+        return this.repository.create(dto, shipment);
     }
 
 }
