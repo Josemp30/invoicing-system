@@ -3,7 +3,7 @@ import { CashCountEntity } from "../../entities";
 import { CashCountRepository } from "../../repositories";
 
 export interface CreateCashCountUseCase {
-    execute(dto: CreateCashCountDto): Promise<CashCountEntity>;
+    execute(dto: CreateCashCountDto, date: Date): Promise<CashCountEntity>;
 }
 
 export class CreateCashCount implements CreateCashCountUseCase {
@@ -12,8 +12,8 @@ export class CreateCashCount implements CreateCashCountUseCase {
         private repository: CashCountRepository,
     ){}
 
-    execute(dto: CreateCashCountDto): Promise<CashCountEntity> {
-        return this.repository.create(dto);
+    execute(dto: CreateCashCountDto, date: Date): Promise<CashCountEntity> {
+        return this.repository.create(dto, date);
     }
 
 }
